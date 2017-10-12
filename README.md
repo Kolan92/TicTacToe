@@ -1,2 +1,2 @@
-# Simple implementation on tick tack tow in c#
-Tick tack toe written in C# .Net Core, tested with Nunit and Fluent Assertion
+# Simple implementation on tic tac toe in c#
+Tic tac toe written in C# .Net Core, tested with Nunit and Fluent Assertion

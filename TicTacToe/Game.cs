@@ -93,7 +93,7 @@ namespace TicTacToe
         private void ValidateField(int x, int y)
         {
             if (Fields[--x][--y] != Player.None)
-                throw new ArgumentException("Field is alredy changed");
+                throw new ArgumentException("Field is already changed");
         }
 
         private void ValidateIndex(int index)
@@ -107,11 +107,5 @@ namespace TicTacToe
             var rowsString = Fields.Select(row => string.Join("|", row.Select(field => (char)field)));
             return string.Join($"{Environment.NewLine}-----{Environment.NewLine}", rowsString);
         }
-    }
-
-    public class GameResult
-    {
-        public bool IsGameEnd { get; set; }
-        public Player? Winner { get; set; }
     }
 }

@@ -5,6 +5,5 @@
         None = ' ',
         Cross = 'X',
         Circle = 'O'
-
     }
 }

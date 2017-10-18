@@ -6,7 +6,7 @@ using System.Linq;
 namespace TicTacToe.Tests
 {
     [TestFixture]
-    public class ScoreBoardTest
+    public class GameTest
     {
         private Game _game;
 
@@ -17,7 +17,7 @@ namespace TicTacToe.Tests
         }
 
         [Test]
-        public void Should_Score_Board_Be_Empty_On_Game_Begining()
+        public void Should_Score_Board_Be_Empty_On_Game_Beginning()
         {
             _game.Fields
                 .SelectMany(row => row)
@@ -34,7 +34,7 @@ namespace TicTacToe.Tests
         }
 
         [Test]
-        public void Shoudl_Cross_Player_Have_First_Turn()
+        public void Should_Cross_Player_Have_First_Turn()
         {
             _game.CurrentPlayer.Should().Be(Player.Cross);
         }
@@ -43,13 +43,13 @@ namespace TicTacToe.Tests
         [TestCase(1, 0)]
         [TestCase(4, 1)]
         [TestCase(1, 4)]
-        public void Should_Throw_Argumnt_Exception_Given_Player_Move_Outside_Board(int x, int y)
+        public void Should_Throw_Argument_Exception_Given_Player_Move_Outside_Board(int x, int y)
         {
             Assert.Throws<ArgumentException>(() => _game.Play(x, y));
         }
 
         [Test]
-        public void Shoudl_Player_After_Turn_Change_Filed_On_Score_Board()
+        public void Should_Player_After_Turn_Change_Filed_On_Score_Board()
         {
             _game.Play(1, 1);
             _game.Fields.First().First().Should().Be(Player.Cross);
@@ -134,7 +134,7 @@ namespace TicTacToe.Tests
         }
 
         [Test]
-        public void Should_End_Game_When_All_Fileds_Are_Ocupied_But_Without_Winner()
+        public void Should_End_Game_When_All_Fields_Are_Occupied_But_Without_Winner()
         {
             _game.Play(1,1).IsGameEnd.Should().BeFalse();//X
             _game.Play(2,1).IsGameEnd.Should().BeFalse();//O
